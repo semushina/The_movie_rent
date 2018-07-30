@@ -63,7 +63,10 @@ namespace Movie_rent.WinForms
             InitializeComponent();
 
             if (film.id == 0) return;
-            //init fields
+            textBox_FilmName.Text = film.name;
+            numericUpDown_FilmYear.Value = film.year;
+            numericUpDown_FilmDuraction.Value = film.duration;
+
         }
 
         private void btn_FilmAddActors_Click(object sender, EventArgs e)
@@ -93,5 +96,6 @@ namespace Movie_rent.WinForms
             film.duration = (int)numericUpDown_FilmDuraction.Value;
             return film;
         }
+        
     }
 }

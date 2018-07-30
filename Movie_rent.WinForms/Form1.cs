@@ -1,5 +1,4 @@
-﻿using Movie_rent.WinForms.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +15,11 @@ namespace Movie_rent.WinForms
     public partial class Form1 : Form
     {
         MovieRentContext db;
-        private MainViewModel _model;
+        private DbInterface _model;
 
         public static Form1 Current { get; set; }
 
-        public MainViewModel getModel()
+        public DbInterface getModel()
         {
             return _model;
         }
@@ -30,7 +29,7 @@ namespace Movie_rent.WinForms
             InitializeComponent();
             Current = this;
             db = new MovieRentContext();
-            _model = new MainViewModel(db);
+            _model = new DbInterface(db);
 
             db.clients.Load();
             dataGrid_Clients.DataSource = db.clients.Local.ToBindingList();
@@ -109,7 +108,13 @@ namespace Movie_rent.WinForms
 
         private void btn_AddClient_Click(object sender, EventArgs e)
         {
-            _model.AddClient();
+            client client = new client();
+            client.id = 0;
+            ClientForm form = new ClientForm(client);
+            var result = form.ShowDialog();
+            if (result != DialogResult.OK) return;            
+
+            _model.AddClient(form.getClient());
             Refresh();
         }       
 
@@ -121,6 +126,12 @@ namespace Movie_rent.WinForms
             int id = 0;
             bool converted = Int32.TryParse(dataGrid_Clients[0, index].Value.ToString(), out id);
             if (!converted) return;
+
+            client client = db.clients.Find(id);
+            ClientForm form = new ClientForm(client);
+
+            var result = form.ShowDialog();
+            if (result == DialogResult.Cancel) return;
 
             _model.EditClient(id);
             Refresh();
@@ -142,7 +153,15 @@ namespace Movie_rent.WinForms
 
         private void btn_AddDirector_Click(object sender, EventArgs e)
         {
-            _model.AddDirector();
+            director director = new director();
+            director.id = 0;
+            DirectorForm form = new DirectorForm(director);
+
+            var result = form.ShowDialog();
+            if (result != DialogResult.OK) return;
+
+            _model.AddDirector(form.getDirector());
+            Refresh();
         }
 
         private void btn_EditDirector_Click(object sender, EventArgs e)
@@ -153,6 +172,8 @@ namespace Movie_rent.WinForms
             int id = 0;
             bool converted = Int32.TryParse(dataGrid_Directors[0, index].Value.ToString(), out id);
             if (!converted) return;
+
+            
 
             _model.EditDirector(id);
             Refresh();
@@ -173,7 +194,13 @@ namespace Movie_rent.WinForms
 
         private void btn_AddActor_Click(object sender, EventArgs e)
         {
-            _model.AddActor();
+            actor actor = new actor();
+            ActorForm form = new ActorForm(actor);
+
+            var result = form.ShowDialog();
+            if (result == DialogResult.Cancel) return;
+            _model.AddActor(form.getActor());
+            Refresh();
         }
 
         private void btn_DeleteActor_Click(object sender, EventArgs e)
@@ -204,7 +231,14 @@ namespace Movie_rent.WinForms
 
         private void btn_AddGenre_Click(object sender, EventArgs e)
         {
-            _model.AddGenre();
+            genre genre = new genre();
+            GenreForm form = new GenreForm(genre);
+
+            var result = form.ShowDialog();
+
+            if (result == DialogResult.Cancel) return;
+            _model.AddGenre(form.getGenre());
+            Refresh();
         }
 
         private void btn_EditGenre_Click(object sender, EventArgs e)
@@ -235,7 +269,14 @@ namespace Movie_rent.WinForms
 
         private void btn_AddStaff_Click(object sender, EventArgs e)
         {
-            _model.AddStaff();
+            staff staff = new staff();
+            StaffForm form = new StaffForm(staff);
+
+            var result = form.ShowDialog();
+
+            if (result == DialogResult.Cancel) return;
+            _model.AddStaff(form.getStaff());
+            Refresh();
         }
 
         private void btn_EditStaff_Click(object sender, EventArgs e)
@@ -275,6 +316,19 @@ namespace Movie_rent.WinForms
             _model.AddFilm(form.getFilm());
             db.available_films.Load();
             Refresh();
+        }
+
+        private void btn_CatalogEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGrid_Films.SelectedRows.Count < 1) return;
+
+            int index = dataGrid_Films.SelectedRows[0].Index;
+            int id = 0;
+            bool converted = Int32.TryParse(dataGrid_Films[0, index].Value.ToString(), out id);
+            if (!converted) return;
+
+           
+            
         }
     }
 

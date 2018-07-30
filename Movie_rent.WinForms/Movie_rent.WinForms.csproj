@@ -64,6 +64,12 @@
     <Compile Include="ActorForm.Designer.cs">
       <DependentUpon>ActorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertiesAddDel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,9 +115,12 @@
     <Compile Include="StaffForm.Designer.cs">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="DbInterface.cs" />
     <EmbeddedResource Include="ActorForm.resx">
       <DependentUpon>ActorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PropertiesAddDel.resx">
       <DependentUpon>PropertiesAddDel.cs</DependentUpon>

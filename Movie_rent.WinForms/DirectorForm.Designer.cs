@@ -55,7 +55,6 @@
             // 
             // btn_DirectorCancel
             // 
-            this.btn_DirectorCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_DirectorCancel.Location = new System.Drawing.Point(7, 234);
             this.btn_DirectorCancel.Name = "btn_DirectorCancel";
             this.btn_DirectorCancel.Size = new System.Drawing.Size(75, 23);
@@ -65,13 +64,13 @@
             // 
             // btn_DirectorOk
             // 
-            this.btn_DirectorOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_DirectorOk.Location = new System.Drawing.Point(322, 234);
             this.btn_DirectorOk.Name = "btn_DirectorOk";
             this.btn_DirectorOk.Size = new System.Drawing.Size(75, 23);
             this.btn_DirectorOk.TabIndex = 14;
             this.btn_DirectorOk.Text = "OK";
             this.btn_DirectorOk.UseVisualStyleBackColor = true;
+            this.btn_DirectorOk.Click += new System.EventHandler(this.btn_DirectorOk_Click);
             // 
             // textBox_DirectorLname
             // 
@@ -124,9 +123,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_DirectorCancel;
         private System.Windows.Forms.Button btn_DirectorOk;
-        protected internal System.Windows.Forms.TextBox textBox_DirectorLname;
-        protected internal System.Windows.Forms.TextBox textBox_DirectorFname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_DirectorLname;
+        private System.Windows.Forms.TextBox textBox_DirectorFname;
     }
 }

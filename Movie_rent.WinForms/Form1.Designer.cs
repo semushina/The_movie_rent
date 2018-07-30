@@ -36,6 +36,9 @@
             this.btn_AddClient = new System.Windows.Forms.Button();
             this.dataGrid_Clients = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btn_CatalogEdit = new System.Windows.Forms.Button();
+            this.btn_AddNewFilm = new System.Windows.Forms.Button();
+            this.dataGrid_Films = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btn_DeleteDirector = new System.Windows.Forms.Button();
             this.btn_EditDirector = new System.Windows.Forms.Button();
@@ -56,12 +59,13 @@
             this.btn_EditStaff = new System.Windows.Forms.Button();
             this.btn_AddStaff = new System.Windows.Forms.Button();
             this.dataGrid_Staffs = new System.Windows.Forms.DataGridView();
-            this.dataGrid_Films = new System.Windows.Forms.DataGridView();
-            this.btn_AddNewFilm = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.dataGrid_Orders = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clients)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Films)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Directors)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -70,7 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Genres)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Staffs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Films)).BeginInit();
+            this.tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Orders)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -82,6 +87,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(13, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -114,9 +120,9 @@
             // 
             // btn_DeleteClient
             // 
-            this.btn_DeleteClient.Location = new System.Drawing.Point(489, 66);
+            this.btn_DeleteClient.Location = new System.Drawing.Point(300, 305);
             this.btn_DeleteClient.Name = "btn_DeleteClient";
-            this.btn_DeleteClient.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteClient.Size = new System.Drawing.Size(129, 58);
             this.btn_DeleteClient.TabIndex = 3;
             this.btn_DeleteClient.Text = "Delete";
             this.btn_DeleteClient.UseVisualStyleBackColor = true;
@@ -124,9 +130,9 @@
             // 
             // btn_EditClient
             // 
-            this.btn_EditClient.Location = new System.Drawing.Point(489, 36);
+            this.btn_EditClient.Location = new System.Drawing.Point(300, 246);
             this.btn_EditClient.Name = "btn_EditClient";
-            this.btn_EditClient.Size = new System.Drawing.Size(75, 23);
+            this.btn_EditClient.Size = new System.Drawing.Size(129, 58);
             this.btn_EditClient.TabIndex = 2;
             this.btn_EditClient.Text = "Edit";
             this.btn_EditClient.UseVisualStyleBackColor = true;
@@ -134,9 +140,9 @@
             // 
             // btn_AddClient
             // 
-            this.btn_AddClient.Location = new System.Drawing.Point(489, 7);
+            this.btn_AddClient.Location = new System.Drawing.Point(435, 246);
             this.btn_AddClient.Name = "btn_AddClient";
-            this.btn_AddClient.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddClient.Size = new System.Drawing.Size(129, 117);
             this.btn_AddClient.TabIndex = 1;
             this.btn_AddClient.Text = "Add";
             this.btn_AddClient.UseVisualStyleBackColor = true;
@@ -149,11 +155,12 @@
             this.dataGrid_Clients.Location = new System.Drawing.Point(7, 7);
             this.dataGrid_Clients.Name = "dataGrid_Clients";
             this.dataGrid_Clients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid_Clients.Size = new System.Drawing.Size(464, 261);
+            this.dataGrid_Clients.Size = new System.Drawing.Size(557, 233);
             this.dataGrid_Clients.TabIndex = 0;
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_CatalogEdit);
             this.tabPage3.Controls.Add(this.btn_AddNewFilm);
             this.tabPage3.Controls.Add(this.dataGrid_Films);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -162,6 +169,35 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Catalog";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_CatalogEdit
+            // 
+            this.btn_CatalogEdit.Location = new System.Drawing.Point(303, 308);
+            this.btn_CatalogEdit.Name = "btn_CatalogEdit";
+            this.btn_CatalogEdit.Size = new System.Drawing.Size(129, 58);
+            this.btn_CatalogEdit.TabIndex = 3;
+            this.btn_CatalogEdit.Text = "Edit";
+            this.btn_CatalogEdit.UseVisualStyleBackColor = true;
+            this.btn_CatalogEdit.Click += new System.EventHandler(this.btn_CatalogEdit_Click);
+            // 
+            // btn_AddNewFilm
+            // 
+            this.btn_AddNewFilm.Location = new System.Drawing.Point(438, 249);
+            this.btn_AddNewFilm.Name = "btn_AddNewFilm";
+            this.btn_AddNewFilm.Size = new System.Drawing.Size(129, 117);
+            this.btn_AddNewFilm.TabIndex = 2;
+            this.btn_AddNewFilm.Text = "Add new film";
+            this.btn_AddNewFilm.UseVisualStyleBackColor = true;
+            this.btn_AddNewFilm.Click += new System.EventHandler(this.btn_AddNewFilm_Click);
+            // 
+            // dataGrid_Films
+            // 
+            this.dataGrid_Films.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Films.Location = new System.Drawing.Point(4, 4);
+            this.dataGrid_Films.Name = "dataGrid_Films";
+            this.dataGrid_Films.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGrid_Films.Size = new System.Drawing.Size(563, 239);
+            this.dataGrid_Films.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -376,23 +412,25 @@
             this.dataGrid_Staffs.Size = new System.Drawing.Size(564, 239);
             this.dataGrid_Staffs.TabIndex = 12;
             // 
-            // dataGrid_Films
+            // tabPage8
             // 
-            this.dataGrid_Films.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_Films.Location = new System.Drawing.Point(4, 4);
-            this.dataGrid_Films.Name = "dataGrid_Films";
-            this.dataGrid_Films.Size = new System.Drawing.Size(563, 239);
-            this.dataGrid_Films.TabIndex = 0;
+            this.tabPage8.Controls.Add(this.dataGrid_Orders);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(570, 369);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Order";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // btn_AddNewFilm
+            // dataGrid_Orders
             // 
-            this.btn_AddNewFilm.Location = new System.Drawing.Point(438, 249);
-            this.btn_AddNewFilm.Name = "btn_AddNewFilm";
-            this.btn_AddNewFilm.Size = new System.Drawing.Size(129, 117);
-            this.btn_AddNewFilm.TabIndex = 2;
-            this.btn_AddNewFilm.Text = "Add new film";
-            this.btn_AddNewFilm.UseVisualStyleBackColor = true;
-            this.btn_AddNewFilm.Click += new System.EventHandler(this.btn_AddNewFilm_Click);
+            this.dataGrid_Orders.AllowUserToDeleteRows = false;
+            this.dataGrid_Orders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Orders.Location = new System.Drawing.Point(3, 3);
+            this.dataGrid_Orders.Name = "dataGrid_Orders";
+            this.dataGrid_Orders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGrid_Orders.Size = new System.Drawing.Size(564, 239);
+            this.dataGrid_Orders.TabIndex = 13;
             // 
             // Form1
             // 
@@ -406,6 +444,7 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clients)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Films)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Directors)).EndInit();
             this.tabPage5.ResumeLayout(false);
@@ -414,7 +453,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Genres)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Staffs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Films)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Orders)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -451,6 +491,9 @@
         private System.Windows.Forms.DataGridView dataGrid_Staffs;
         private System.Windows.Forms.DataGridView dataGrid_Films;
         private System.Windows.Forms.Button btn_AddNewFilm;
+        private System.Windows.Forms.Button btn_CatalogEdit;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.DataGridView dataGrid_Orders;
     }
 }
 

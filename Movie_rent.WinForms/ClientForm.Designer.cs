@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_ClientFname = new System.Windows.Forms.TextBox();
-            this.textBox_ClientLname = new System.Windows.Forms.TextBox();
+            this.btn_ClientCancel = new System.Windows.Forms.Button();
+            this.btn_ClientOk = new System.Windows.Forms.Button();
             this.textBox_ClientTel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_ClientOk = new System.Windows.Forms.Button();
-            this.btn_ClientCancel = new System.Windows.Forms.Button();
+            this.textBox_ClientLname = new System.Windows.Forms.TextBox();
+            this.textBox_ClientFname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,37 +57,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Client";
             // 
-            // label1
+            // btn_ClientCancel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(198, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "First Name";
+            this.btn_ClientCancel.Location = new System.Drawing.Point(7, 232);
+            this.btn_ClientCancel.Name = "btn_ClientCancel";
+            this.btn_ClientCancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_ClientCancel.TabIndex = 7;
+            this.btn_ClientCancel.Text = "Cancel";
+            this.btn_ClientCancel.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btn_ClientOk
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(198, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Last Name";
-            // 
-            // textBox_ClientFname
-            // 
-            this.textBox_ClientFname.Location = new System.Drawing.Point(297, 60);
-            this.textBox_ClientFname.Name = "textBox_ClientFname";
-            this.textBox_ClientFname.Size = new System.Drawing.Size(100, 20);
-            this.textBox_ClientFname.TabIndex = 2;
-            // 
-            // textBox_ClientLname
-            // 
-            this.textBox_ClientLname.Location = new System.Drawing.Point(297, 93);
-            this.textBox_ClientLname.Name = "textBox_ClientLname";
-            this.textBox_ClientLname.Size = new System.Drawing.Size(100, 20);
-            this.textBox_ClientLname.TabIndex = 3;
+            this.btn_ClientOk.Location = new System.Drawing.Point(322, 232);
+            this.btn_ClientOk.Name = "btn_ClientOk";
+            this.btn_ClientOk.Size = new System.Drawing.Size(75, 23);
+            this.btn_ClientOk.TabIndex = 6;
+            this.btn_ClientOk.Text = "OK";
+            this.btn_ClientOk.UseVisualStyleBackColor = true;
+            this.btn_ClientOk.Click += new System.EventHandler(this.btn_ClientOk_Click);
             // 
             // textBox_ClientTel
             // 
@@ -105,25 +92,37 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Tel.";
             // 
-            // btn_ClientOk
+            // textBox_ClientLname
             // 
-            this.btn_ClientOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_ClientOk.Location = new System.Drawing.Point(322, 232);
-            this.btn_ClientOk.Name = "btn_ClientOk";
-            this.btn_ClientOk.Size = new System.Drawing.Size(75, 23);
-            this.btn_ClientOk.TabIndex = 6;
-            this.btn_ClientOk.Text = "OK";
-            this.btn_ClientOk.UseVisualStyleBackColor = true;
+            this.textBox_ClientLname.Location = new System.Drawing.Point(297, 93);
+            this.textBox_ClientLname.Name = "textBox_ClientLname";
+            this.textBox_ClientLname.Size = new System.Drawing.Size(100, 20);
+            this.textBox_ClientLname.TabIndex = 3;
             // 
-            // btn_ClientCancel
+            // textBox_ClientFname
             // 
-            this.btn_ClientCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_ClientCancel.Location = new System.Drawing.Point(7, 232);
-            this.btn_ClientCancel.Name = "btn_ClientCancel";
-            this.btn_ClientCancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_ClientCancel.TabIndex = 7;
-            this.btn_ClientCancel.Text = "Cancel";
-            this.btn_ClientCancel.UseVisualStyleBackColor = true;
+            this.textBox_ClientFname.Location = new System.Drawing.Point(297, 60);
+            this.textBox_ClientFname.Name = "textBox_ClientFname";
+            this.textBox_ClientFname.Size = new System.Drawing.Size(100, 20);
+            this.textBox_ClientFname.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(198, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(198, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "First Name";
             // 
             // ClientForm
             // 
@@ -147,8 +146,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        protected internal System.Windows.Forms.TextBox textBox_ClientTel;
-        protected internal System.Windows.Forms.TextBox textBox_ClientLname;
-        protected internal System.Windows.Forms.TextBox textBox_ClientFname;
+        private System.Windows.Forms.TextBox textBox_ClientTel;
+        private System.Windows.Forms.TextBox textBox_ClientLname;
+        private System.Windows.Forms.TextBox textBox_ClientFname;
     }
 }

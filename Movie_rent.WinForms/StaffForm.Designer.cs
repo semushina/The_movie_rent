@@ -121,7 +121,6 @@
             // 
             // btn_StaffCancel
             // 
-            this.btn_StaffCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_StaffCancel.Location = new System.Drawing.Point(7, 232);
             this.btn_StaffCancel.Name = "btn_StaffCancel";
             this.btn_StaffCancel.Size = new System.Drawing.Size(75, 23);
@@ -131,13 +130,13 @@
             // 
             // btn_StaffOk
             // 
-            this.btn_StaffOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btn_StaffOk.Location = new System.Drawing.Point(322, 232);
             this.btn_StaffOk.Name = "btn_StaffOk";
             this.btn_StaffOk.Size = new System.Drawing.Size(75, 23);
             this.btn_StaffOk.TabIndex = 6;
             this.btn_StaffOk.Text = "OK";
             this.btn_StaffOk.UseVisualStyleBackColor = true;
+            this.btn_StaffOk.Click += new System.EventHandler(this.btn_StaffOk_Click);
             // 
             // textBox_StaffLname
             // 
@@ -189,17 +188,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        protected internal System.Windows.Forms.TextBox textBox_StaffPassword;
-        protected internal System.Windows.Forms.TextBox textBox_StaffLogin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_StaffCancel;
         private System.Windows.Forms.Button btn_StaffOk;
-        protected internal System.Windows.Forms.TextBox textBox_StaffLname;
-        protected internal System.Windows.Forms.TextBox textBox_StaffFname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        protected internal System.Windows.Forms.NumericUpDown numericUpDown_Staff;
+        private System.Windows.Forms.TextBox textBox_StaffPassword;
+        private System.Windows.Forms.TextBox textBox_StaffLogin;
+        private System.Windows.Forms.TextBox textBox_StaffLname;
+        private System.Windows.Forms.TextBox textBox_StaffFname;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Staff;
     }
 }
