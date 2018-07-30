@@ -83,6 +83,12 @@ namespace Movie_rent.Db
                 .WillCascadeOnDelete();
 
             modelBuilder.Entity<film>()
+                .HasMany(e => e.orders)
+                .WithRequired(e => e.film)
+                .HasForeignKey(e => e.film_id)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<film>()
                 .HasMany(e => e.genres)
                 .WithMany(e => e.films)
                 .Map(m => m.ToTable("film_genre"));

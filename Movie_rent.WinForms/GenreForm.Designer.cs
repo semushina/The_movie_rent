@@ -93,7 +93,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GenreForm";
-            this.Text = "GenreForm";
+            this.Text = "Genre Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

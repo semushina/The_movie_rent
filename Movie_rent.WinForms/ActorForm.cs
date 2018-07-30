@@ -18,7 +18,7 @@ namespace Movie_rent.WinForms
         {
             this.actor = actor;
             InitializeComponent();
-            if (actor.id == null) return;
+            if (actor.id == 0) return;
             textBox_ActorFname.Text = actor.fname;
             textBox_ActorLname.Text = actor.lname;
         }

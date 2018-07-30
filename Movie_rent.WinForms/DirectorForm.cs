@@ -18,7 +18,7 @@ namespace Movie_rent.WinForms
         {
             this.director = director;
             InitializeComponent();
-            if (director.id == null) return;
+            if (director.id == 0) return;
             textBox_DirectorFname.Text = director.fname;
             textBox_DirectorLname.Text = director.lname;
         }

@@ -19,7 +19,7 @@ namespace Movie_rent.WinForms
             this.genre = genre;
             InitializeComponent();
 
-            if (genre.id == null) return;
+            if (genre.id == 0) return;
             textBox_GenreName.Text = genre.name;
         }
 

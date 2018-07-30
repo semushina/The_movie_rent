@@ -184,8 +184,6 @@
         private System.Windows.Forms.Button btn_Del;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Button btn_Ok;
@@ -193,5 +191,7 @@
         protected System.Windows.Forms.TextBox textBox_Search;
         protected System.Windows.Forms.ListBox listBox1;
         protected System.Windows.Forms.ListBox listBox2;
+        protected System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

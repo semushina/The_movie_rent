@@ -190,7 +190,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FilmForm";
-            this.Text = "FilmForm";
+            this.Text = "Film Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FilmDuraction)).EndInit();

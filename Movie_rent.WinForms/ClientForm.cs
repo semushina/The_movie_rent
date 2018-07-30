@@ -19,7 +19,7 @@ namespace Movie_rent.WinForms
             this.client = client;
             InitializeComponent();
 
-            if (client.id == null) return;
+            if (client.id == 0) return;
             textBox_ClientFname.Text = client.fname;
             textBox_ClientLname.Text = client.lname;
             textBox_ClientTel.Text = client.tel_number;

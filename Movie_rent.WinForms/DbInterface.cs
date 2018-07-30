@@ -25,16 +25,16 @@ namespace Movie_rent.WinForms
             db.SaveChanges();
         }
 
-        public void EditClient(int id)
+        public void EditClient(client client)
         {
-            client client = db.clients.Find(id);
+            if (client == null) return;
+            db.Entry(client).State = EntityState.Modified;
             db.SaveChanges();
         }
 
-        public void DeleteClient(int id)
+        public void DeleteClient(client client)
         {
-            client client = db.clients.Find(id);
-            db.clients.Attach(client);
+            if (client == null) return;
             db.clients.Remove(client);
             db.SaveChanges();
         }
@@ -189,11 +189,28 @@ namespace Movie_rent.WinForms
            return db.actors.Where(b => b.fname.StartsWith(str) || b.lname.StartsWith(str)).ToList();
         }
 
+        public List<client> SearchClients(string str)
+        {
+            return db.clients.Where(b => b.fname.StartsWith(str) || b.lname.StartsWith(str)).ToList();
+        }
+
+        public List<film> SearchFilms(string str)
+        {
+            return db.films.Where(b => b.name.StartsWith(str)).ToList();
+        }
+
         public void EditFilm(int id, film film)
         {
             if (film == null) return;
             db.films.Find(id);
             db.films.Add(film);
+            db.SaveChanges();
+        }
+
+        public void AddOrder(order order)
+        {
+            if (order == null) return;
+            db.orders.Add(order);
             db.SaveChanges();
         }
     }

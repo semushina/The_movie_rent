@@ -18,7 +18,7 @@ namespace Movie_rent.WinForms
         {
             this.staff = staff;
             InitializeComponent();
-            if (staff.id == null) return;
+            if (staff.id == 0) return;
             textBox_StaffFname.Text = staff.fname;
             textBox_StaffLname.Text = staff.lname;
             numericUpDown_Staff.Value = staff.type;

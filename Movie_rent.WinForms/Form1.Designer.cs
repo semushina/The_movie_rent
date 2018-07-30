@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_DeleteClient = new System.Windows.Forms.Button();
             this.btn_EditClient = new System.Windows.Forms.Button();
@@ -60,7 +59,10 @@
             this.btn_AddStaff = new System.Windows.Forms.Button();
             this.dataGrid_Staffs = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.btn_AddOrder = new System.Windows.Forms.Button();
             this.dataGrid_Orders = new System.Windows.Forms.DataGridView();
+            this.btn_OrderDelete = new System.Windows.Forms.Button();
+            this.btn_OrderEdit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clients)).BeginInit();
@@ -80,29 +82,18 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(13, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(578, 395);
             this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(570, 369);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -152,10 +143,10 @@
             // 
             this.dataGrid_Clients.AllowUserToAddRows = false;
             this.dataGrid_Clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_Clients.Location = new System.Drawing.Point(7, 7);
+            this.dataGrid_Clients.Location = new System.Drawing.Point(3, 3);
             this.dataGrid_Clients.Name = "dataGrid_Clients";
             this.dataGrid_Clients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid_Clients.Size = new System.Drawing.Size(557, 233);
+            this.dataGrid_Clients.Size = new System.Drawing.Size(564, 239);
             this.dataGrid_Clients.TabIndex = 0;
             // 
             // tabPage3
@@ -414,6 +405,9 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.btn_OrderDelete);
+            this.tabPage8.Controls.Add(this.btn_OrderEdit);
+            this.tabPage8.Controls.Add(this.btn_AddOrder);
             this.tabPage8.Controls.Add(this.dataGrid_Orders);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
@@ -421,6 +415,16 @@
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Order";
             this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // btn_AddOrder
+            // 
+            this.btn_AddOrder.Location = new System.Drawing.Point(438, 248);
+            this.btn_AddOrder.Name = "btn_AddOrder";
+            this.btn_AddOrder.Size = new System.Drawing.Size(129, 117);
+            this.btn_AddOrder.TabIndex = 14;
+            this.btn_AddOrder.Text = "Add new orders";
+            this.btn_AddOrder.UseVisualStyleBackColor = true;
+            this.btn_AddOrder.Click += new System.EventHandler(this.btn_AddOrder_Click);
             // 
             // dataGrid_Orders
             // 
@@ -432,6 +436,24 @@
             this.dataGrid_Orders.Size = new System.Drawing.Size(564, 239);
             this.dataGrid_Orders.TabIndex = 13;
             // 
+            // btn_OrderDelete
+            // 
+            this.btn_OrderDelete.Location = new System.Drawing.Point(303, 307);
+            this.btn_OrderDelete.Name = "btn_OrderDelete";
+            this.btn_OrderDelete.Size = new System.Drawing.Size(129, 58);
+            this.btn_OrderDelete.TabIndex = 16;
+            this.btn_OrderDelete.Text = "Delete";
+            this.btn_OrderDelete.UseVisualStyleBackColor = true;
+            // 
+            // btn_OrderEdit
+            // 
+            this.btn_OrderEdit.Location = new System.Drawing.Point(303, 248);
+            this.btn_OrderEdit.Name = "btn_OrderEdit";
+            this.btn_OrderEdit.Size = new System.Drawing.Size(129, 58);
+            this.btn_OrderEdit.TabIndex = 15;
+            this.btn_OrderEdit.Text = "Edit";
+            this.btn_OrderEdit.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,7 +461,7 @@
             this.ClientSize = new System.Drawing.Size(603, 420);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Movie rent";
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Clients)).EndInit();
@@ -462,7 +484,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btn_DeleteClient;
         private System.Windows.Forms.Button btn_EditClient;
@@ -494,6 +515,9 @@
         private System.Windows.Forms.Button btn_CatalogEdit;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.DataGridView dataGrid_Orders;
+        private System.Windows.Forms.Button btn_AddOrder;
+        private System.Windows.Forms.Button btn_OrderDelete;
+        private System.Windows.Forms.Button btn_OrderEdit;
     }
 }
 

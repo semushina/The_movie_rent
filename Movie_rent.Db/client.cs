@@ -15,6 +15,11 @@ namespace Movie_rent.Db
             orders = new HashSet<order>();
             films = new HashSet<film>();
         }
+        public override string ToString()
+        {
+            return fname + " " + lname;
+        }
+
 
         [DisplayName("¹")]
         public int id { get; set; }
@@ -33,10 +38,10 @@ namespace Movie_rent.Db
         [StringLength(128)]
         [DisplayName("Tel.")]
         public string tel_number { get; set; }
-
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<order> orders { get; set; }
-
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<film> films { get; set; }
     }

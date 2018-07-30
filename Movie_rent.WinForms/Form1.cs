@@ -50,6 +50,9 @@ namespace Movie_rent.WinForms
             dataGrid_Films.CellFormatting += gridFormatFilmsActors;
             dataGrid_Films.CellEndEdit += grid_CellEndEdit;
 
+            db.orders.Load();
+            dataGrid_Orders.DataSource = db.orders.Local.ToBindingList();
+
 
             Refresh();
         }
@@ -104,6 +107,7 @@ namespace Movie_rent.WinForms
             dataGrid_Genres.Refresh();
             dataGrid_Staffs.Refresh();
             dataGrid_Films.Refresh();
+            dataGrid_Orders.Refresh();
         }
 
         private void btn_AddClient_Click(object sender, EventArgs e)
@@ -133,7 +137,7 @@ namespace Movie_rent.WinForms
             var result = form.ShowDialog();
             if (result == DialogResult.Cancel) return;
 
-            _model.EditClient(id);
+            _model.EditClient(form.getClient());
             Refresh();
                      
         }
@@ -143,11 +147,8 @@ namespace Movie_rent.WinForms
             if (dataGrid_Clients.SelectedRows.Count < 1) return;
 
             int index = dataGrid_Clients.SelectedRows[0].Index;
-            int id = 0;
-            bool converted = Int32.TryParse(dataGrid_Clients[0, index].Value.ToString(), out id);
-            if (!converted) return;
-
-            _model.DeleteClient(id);
+            client selected = dataGrid_Clients.SelectedRows[0].DataBoundItem as client;  ///@todo !!!!СДЕЛАТЬ ПО АНАЛОГИИ ВЕЗДЕ ГДЕ ПАРСИТСЯ СТРОКА В ИНДЕКС!!!!!
+            _model.DeleteClient(selected);
             Refresh();
         }
 
@@ -326,9 +327,27 @@ namespace Movie_rent.WinForms
             int id = 0;
             bool converted = Int32.TryParse(dataGrid_Films[0, index].Value.ToString(), out id);
             if (!converted) return;
+            Refresh();
 
            
             
+        }
+
+        private void btn_AddOrder_Click(object sender, EventArgs e)
+        {
+            order order = new order();
+            order.issue_date = DateTime.Now;
+            order.return_date = DateTime.Now.AddDays(7);
+            order.cost = 51;
+            order.staff_id = 1;
+
+            OrderForm form = new OrderForm(order);
+
+            var result = form.ShowDialog();
+            if (result != DialogResult.OK) return;
+
+            _model.AddOrder(form.getOrder());
+            Refresh();
         }
     }
 

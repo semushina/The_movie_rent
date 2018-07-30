@@ -22,7 +22,7 @@ namespace Movie_rent.Db
         [StringLength(128)]
         [DisplayName("Name")]
         public string name { get; set; }
-
+        [Browsable(false)]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<film> films { get; set; }
     }

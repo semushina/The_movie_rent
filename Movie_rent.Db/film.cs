@@ -12,10 +12,16 @@ namespace Movie_rent.Db
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public film()
         {
+            orders = new HashSet<order>();
             clients = new HashSet<client>();
             actors = new HashSet<actor>();
             directors = new HashSet<director>();
             genres = new HashSet<genre>();
+        }
+
+        public override string ToString()
+        {
+            return name;
         }
 
         [DisplayName("¹")]
@@ -34,6 +40,9 @@ namespace Movie_rent.Db
 
         [DisplayName("Available")]
         public virtual available_films available_films { get; set; }
+        [Browsable(false)]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<order> orders { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [DisplayName("In wishlist")]
@@ -45,7 +54,7 @@ namespace Movie_rent.Db
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [DisplayName("Directors")]
-        public virtual ICollection<director> directors { get; set; }        
+        public virtual ICollection<director> directors { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         [DisplayName("Genres")]
